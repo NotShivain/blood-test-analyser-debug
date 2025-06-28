@@ -124,6 +124,8 @@ curl -X POST "http://localhost:8000/analyze" \
 3. Body → form-data:
    - Key: `file` (Type: File) → Select your PDF
    - Key: `query` (Type: Text) → Enter your question
+## Your Output should look like this
+![image](https://github.com/user-attachments/assets/60bca133-e2ef-4ab3-8c8d-420a244809b0)
 
 ## 🔧 Technical Architecture
 
