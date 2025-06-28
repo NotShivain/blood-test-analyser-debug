@@ -2,7 +2,7 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 
-from agents import doctor, verifier
+from agents import doctor, verifier, nutritionist, exercise_specialist
 from tools import search_tool, blood_test_tool
 
 help_patients = Task(
@@ -16,7 +16,7 @@ help_patients = Task(
 nutrition_analysis = Task(
     description="Provide nutrition recommendations based on blood results. Address: {query}",
     expected_output="Nutrition advice including foods to focus on and dietary recommendations.",
-    agent=doctor,
+    agent=nutritionist,
     tools=[blood_test_tool],
     async_execution=False,
 )
@@ -24,7 +24,7 @@ nutrition_analysis = Task(
 exercise_planning = Task(
     description="Create exercise plan based on blood results. Address: {query}",
     expected_output="Exercise recommendations with types, intensity, and safety considerations.",
-    agent=doctor,
+    agent=exercise_specialist,
     tools=[blood_test_tool],
     async_execution=False,
 )
@@ -32,7 +32,7 @@ exercise_planning = Task(
 verification = Task(
     description="Verify if document is a valid blood test report.",
     expected_output="Document verification: valid report confirmation and detected markers.",
-    agent=doctor,
+    agent=verifier,
     tools=[blood_test_tool],
     async_execution=False
 )
