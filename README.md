@@ -33,7 +33,9 @@ A FastAPI-based blood test report analyzer using CrewAI agents powered by Groq's
 ### 6. **Environment Variable Management**
 - **Issue**: Missing `.env` file and improper API key handling
 - **Fix**: Created proper environment configuration with Groq API key management
-
+### 7. **Incomplete and wrong agent definition**
+- **Issue**: Nutritionist, exercise specialist were not defined and used in tasks.py also the goals role and backstory given to the agents were completely wrong
+- **Fix**: Defined agents properly and fixed their prompts 
 ## Setup Instructions
 
 ### Prerequisites
